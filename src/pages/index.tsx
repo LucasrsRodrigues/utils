@@ -1,5 +1,6 @@
-import { Box, Button, Flex, Grid, GridItem, Heading, HStack, Input, InputGroup, InputLeftAddon, InputLeftElement, InputRightElement, Select, Stack, Table, TableCaption, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from "@chakra-ui/react";
-import { useCallback, useEffect, useState } from "react";
+/* eslint-disable react/no-children-prop */
+import { Button, Flex, Grid, GridItem, Heading, HStack, Input, InputGroup, InputLeftElement, InputRightElement, Select, Table, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from "@chakra-ui/react";
+import { useCallback, useState } from "react";
 import { stringToReal } from "../utils";
 
 
@@ -27,12 +28,6 @@ export default function Home() {
   const [periodoType, setPeriodoType] = useState('mes');
   const [datas, setDatas] = useState<DataProps[]>([]);
   const [info, setInfo] = useState({} as InfoProps);
-
-  // A = P (1 + i) ^ t
-  // A = valor final, ou seja, o resultado que você terá;
-  // P = valor inicial depositado;
-  // i = taxa de juros;
-  // t = tempo do investimento.
 
 
   const calcular = useCallback(() => {
@@ -64,7 +59,6 @@ export default function Home() {
     for (let i = 1; i <= newPeriodo; i++) {
       let juros_do_mes = 0;
 
-      // anterior + acumulo + mes
 
       if (i === 1) {
         juros_do_mes = total_acumulado * jurosDoMes;
