@@ -1,6 +1,7 @@
 /* eslint-disable react/no-children-prop */
 import { Button, Flex, Grid, GridItem, Heading, HStack, Input, InputGroup, InputLeftElement, InputRightElement, Select, Table, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from "@chakra-ui/react";
 import { useCallback, useState } from "react";
+import { Header } from "../components/Header";
 import { stringToReal } from "../utils";
 
 
@@ -130,6 +131,8 @@ export default function Simulador() {
 
   return (
     <Flex flexDir="column" alignItems="center" width="100%" height="100%" justifyContent="center" padding="30px">
+      <Header />
+
       <Flex width="870px" flexDir="column" height="328px" borderRadius="8px" background="gray.800" padding="30px">
         <Heading fontSize="20px" fontWeight="700">Preencha os campos abaixo para simular o seu rendimento.</Heading>
 

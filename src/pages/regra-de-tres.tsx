@@ -1,5 +1,9 @@
-import { Button, Flex, Grid, GridItem, Heading, HStack, Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Heading, HStack, Icon, Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { useState } from "react";
+import {BsChevronLeft} from 'react-icons/bs';
+import { Header } from "../components/Header";
+
 
 export default function RegraDeTres() {
   const [a, setA] = useState(0);
@@ -8,12 +12,6 @@ export default function RegraDeTres() {
   const [d, setD] = useState('???');
 
   function calculate() {
-    // 1 - 2
-    // 2 - x
-
-    // 1 * x = 2 * 2
-
-    // x = 2 * 2 / 1
     const x = (b * c) / a;
 
     setD(x.toFixed(2));
@@ -28,6 +26,7 @@ export default function RegraDeTres() {
 
   return (
     <Flex flexDir="column" alignItems="center" width="100%" height="100%" justifyContent="center" padding="30px">
+      <Header />
       <Flex width="870px" flexDir="column" height="328px" borderRadius="8px" background="gray.800" padding="30px">
         <Heading fontSize="20px" fontWeight="700">Cálculo de Regra de Três Simples</Heading>
 
